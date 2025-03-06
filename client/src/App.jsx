@@ -31,6 +31,9 @@ import { ViewAllUsersAdmin } from './pages/ViewAllUsersAdmin'
 import { EditAppAdmin } from './pages/EditAppAdmin'
 import { EditUserAdmin } from './pages/EditUserAdmin'
 import { EditJobAdmin } from './pages/EditJobAdmin'
+import {CareerAdvice} from './pages/CareerAdvice'
+import {MentorshipProgram} from './pages/MentorshipProgram'
+import {BlogPage} from './pages/BlogPage.jsx'
 import { Test } from './pages/Test'
 import NotFound from './pages/NotFound'
 import UnAuthorized from './pages/UnAuthorized'
@@ -95,6 +98,10 @@ function App() {
           <Route path='/JobsLayout' element={<JobsLayout />} />
           <Route path='/Application/:id' element={<Application />} />
           <Route path='/Application/Details/:id' element={<ApplicationDetails />} />
+          <Route path='/careerAdvice' element={<CareerAdvice />} />
+          <Route path='/mentorshipProgram' element={<MentorshipProgram />} />
+          <Route path='/blog' element={<BlogPage />} />
+
 
         </Route>
 

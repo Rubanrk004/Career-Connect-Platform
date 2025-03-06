@@ -36,9 +36,6 @@ function Testimonials() {
 
   return (
     <div className='pt-20 flex flex-col gap-4 md:px-[1rem] px-[1rem]'>
-      <div className='text-2xl titleT'>
-        What Our Users Say
-      </div>
       <div className='relative w-full flex justify-center items-center'>
         <div className='absolute left-[-30px] top-1/2 transform -translate-y-1/2'>
           <button 

@@ -1,63 +1,68 @@
-import React from 'react'
-import { MetaData } from '../components/MetaData'
+import React from 'react';
+import { MetaData } from '../components/MetaData';
 
 export const About = () => {
   return (
     <>
       <MetaData title="About" />
-      <div className="bg-gray-900 min-h-screen pt-14 md:px-20 px-3 text-white">
-  <div className="grid md:grid-cols-3 gap-5 md:px-0 px-2 md:pt-8 pt-4 pb-20">
-    <div className="bg-gray-800 p-5 rounded-lg shadow-lg">
-      <p className="text-4xl pb-3 font-bold text-center text-yellow-500">About Us</p>
-      <p className="text-lg">
-        At JobLane, we're more than just a job application platform –
-        we're your partners in realizing your professional aspirations.
-        Our mission is to connect talented individuals with remarkable
-        opportunities that elevate their careers and enrich their lives.
-        Whether you're a recent graduate stepping into the workforce or a
-        seasoned professional seeking new horizons, JobLane is here to
-        guide you every step of the way.
-      </p>
-    </div>
-    <div className="bg-gray-800 p-5 rounded-lg shadow-lg">
-      <p className="text-3xl text-yellow-500 text-center">What Sets Us Apart</p>
-      <ul className="list-disc px-5 text-lg">
-        <li>
-          <span className="font-semibold text-lg ">
-            Tailored Matches:
-          </span>{" "}
-          We understand that each candidate and company is unique. Our
-          advanced matching algorithms ensure that your skills align
-          perfectly with the roles you're interested in, saving you time
-          and effort
-        </li>
-        <li>
-          <span className="font-semibold text-lg ">
-            Exceptional Support:
-          </span>{" "}
-          Your success is our priority. Our dedicated support team is
-          always ready to assist you, from optimizing your profile to
-          preparing for interviews.
-        </li>
-      </ul>
-    </div>
-    <div className="bg-gray-800 p-5 rounded-lg shadow-lg">
-      <p className="text-2xl text-yellow-500">Join the JobLane Community</p>
-      <p className="pt-3">
-        {" "}When you join JobLane, you're not just signing up for a platform –
-        you're becoming part of a dynamic community of professionals,
-        recruiters, and mentors. Together, we're shaping the future of
-        work, one opportunity at a time.
-      </p>
-      <p className="pt-4">
-        Thank you for choosing JobLane as your partner in career
-        advancement. Here's to unlocking a world of possibilities and
-        achieving greatness together!
-      </p>
-    </div>
-  </div>
-</div>
+      <div className="bg-gray-900 min-h-screen pt-14 md:px-20 px-4 text-white flex flex-col items-center">
+        {/* Page Title */}
+        <div className="text-5xl font-extrabold text-center pb-10 tracking-wide mt-16">
+          About <span className="text-indigo-400">Career Connect</span>
+        </div>
 
+        {/* Content Section */}
+        <div className="grid md:grid-cols-3 gap-8 pb-20 w-full max-w-7xl">
+          {/* Our Mission */}
+          <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-2xl shadow-2xl transform transition duration-300 hover:scale-105 hover:shadow-xl backdrop-blur-lg bg-opacity-90 border border-gray-700">
+            <p className="text-3xl font-semibold text-center text-white pb-4">
+              Our Mission
+            </p>
+            <p className="text-lg leading-relaxed text-gray-300">
+              At <span className="text-indigo-400 font-bold">Career Connect</span>, our mission is to empower professionals by 
+              connecting them with opportunities that match their skills, passion, 
+              and aspirations. We believe in fostering meaningful career journeys 
+              through networking, mentorship, and skill-building.
+            </p>
+          </div>
+
+          {/* Why Choose Us? */}
+          <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-2xl shadow-2xl transform transition duration-300 hover:scale-105 hover:shadow-xl backdrop-blur-lg bg-opacity-90 border border-gray-700">
+            <p className="text-3xl font-semibold text-center text-white pb-4">
+              Why Choose Us?
+            </p>
+            <ul className="list-none space-y-4 text-lg text-gray-300">
+              <li className="flex items-center">
+                <span className="text-indigo-400 font-bold pr-2">🔍 Smart Career Insights:</span> 
+                AI-driven recommendations to help you make informed career decisions.
+              </li>
+              <li className="flex items-center">
+                <span className="text-indigo-400 font-bold pr-2">🌐 Professional Networking:</span> 
+                Connect with industry experts, mentors, and peers worldwide.
+              </li>
+              <li className="flex items-center">
+                <span className="text-indigo-400 font-bold pr-2">📚 Continuous Learning:</span> 
+                Access career resources, skill-building courses, and expert guidance.
+              </li>
+            </ul>
+          </div>
+
+          {/* Be a Part of the Future */}
+          <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-2xl shadow-2xl transform transition duration-300 hover:scale-105 hover:shadow-xl backdrop-blur-lg bg-opacity-90 border border-gray-700">
+            <p className="text-3xl font-semibold text-center text-white pb-4">
+              Be a Part of the Future
+            </p>
+            <p className="leading-relaxed text-gray-300">
+              Joining <span className="text-indigo-400 font-bold">Career Connect</span> means stepping into a world of possibilities. 
+              Whether you're seeking a new role, mentorship, or career growth, 
+              we are here to support your journey every step of the way.
+            </p>
+            <p className="mt-4 text-center font-semibold text-indigo-400 text-lg">
+              🚀 Start your journey with us today!
+            </p>
+          </div>
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};

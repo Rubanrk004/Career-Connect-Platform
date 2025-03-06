@@ -1,98 +1,94 @@
-import React, { useEffect, useState } from 'react'
-import { MetaData } from '../components/MetaData'
-import { AiOutlineMail, AiOutlineUnlock, AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai'
-import { Link, useNavigate } from 'react-router-dom'
-import { TbLoader2 } from 'react-icons/tb'
-import { loginUser } from '../actions/UserActions'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect, useState } from 'react';
+import { MetaData } from '../components/MetaData';
+import { AiOutlineMail, AiOutlineUnlock, AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
+import { Link, useNavigate } from 'react-router-dom';
+import { TbLoader2 } from 'react-icons/tb';
+import { loginUser } from '../actions/UserActions';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const Login = () => {
+  const { loading, isLogin } = useSelector(state => state.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-
-  const { loading, isLogin } = useSelector(state => state.user)
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [eyeTog, setEyeTog] = useState(false)
-
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [eyeTog, setEyeTog] = useState(false);
 
   const loginHandler = (e) => {
-    e.preventDefault()
-    const data = {
-      email, password
-    }
-
-    dispatch(loginUser(data))
-
-    setEmail("")
-    setPassword("")
-  }
-
-
+    e.preventDefault();
+    dispatch(loginUser({ email, password }));
+    setEmail('');
+    setPassword('');
+  };
 
   useEffect(() => {
     if (isLogin) {
-      navigate("/")
+      navigate('/');
     }
-  }, [isLogin])
+  }, [isLogin, navigate]);
 
   return (
-
-
     <>
-
       <MetaData title="Login" />
-      <div className='bg-gray-950 min-h-screen pt-14 md:px-20 px-3   text-white'>
-
-
-        <div className=' flex justify-center w-full items-start pt-14'>
-          <form onSubmit={loginHandler} className='flex  flex-col md:w-1/3 shadow-gray-700  w-full md:mx-0 mx-8' action="">
-
-            <div className='md:px-10 px-2 py-6 w-full flex flex-col gap-4'>
-              <div className='text-center'>
-                <p className='text-4xl  font-medium'>Login</p>
-              </div>
-
-              <div className='bg-white flex justify-center items-center'>
-                <div className='text-gray-600 px-2'>
-                  <AiOutlineMail size={20} />
-                </div>
-                <input onChange={(e) => setEmail(e.target.value)} value={email} required placeholder='Email' type="text" className='outline-none bold-placeholder  w-full text-black px-1 pr-3 py-2' />
-              </div>
-
-              <div className='bg-white flex justify-center items-center'>
-                <div className='text-gray-600 px-2'>
-                  <AiOutlineUnlock size={20} />
-                </div>
-                <input onChange={(e) => setPassword(e.target.value)} value={password} required placeholder='Password' type={eyeTog ? "text" : "password"} className='outline-none bold-placeholder w-full text-black px-1 pr-3 py-2' />
-                <div className='text-gray-600 px-2 cursor-pointer' >
-                  {eyeTog ?
-                    <AiOutlineEye size={20} onClick={() => setEyeTog(!eyeTog)} /> : <AiOutlineEyeInvisible size={20} onClick={() => setEyeTog(!eyeTog)} />
-                  }
-                </div>
-              </div>
-              <div>
-              <button disabled={loading || !email || !password} className='blueCol px-8 w-full py-2 flex justify-center items-center font-semibold' >{loading ? <TbLoader2 className='animate-spin' size={24} /> : "Login"}</button>
-              </div>
-              <div className='text-center text-sm pt-2'>
-                <p>Don't have an account, <Link to="/register" className='text-yellow-400 underline'>Register</Link> here. </p>
-              </div>
-
+      <div className="bg-gradient-to-b from-gray-800 to-black min-h-screen flex justify-center items-center px-4">
+        <div className="w-full max-w-md bg-gray-900 text-white rounded-lg shadow-lg p-8">
+          <h2 className="text-3xl font-semibold text-center mb-6">Welcome Back</h2>
+          
+          <form onSubmit={loginHandler} className="flex flex-col gap-4">
+            
+            {/* Email Input */}
+            <div className="relative">
+              <AiOutlineMail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <input 
+                type="email"
+                placeholder="Email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full pl-10 pr-4 py-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+              />
             </div>
 
+            {/* Password Input */}
+            <div className="relative">
+              <AiOutlineUnlock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <input
+                type={eyeTog ? 'text' : 'password'}
+                placeholder="Password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full pl-10 pr-10 py-2 bg-gray-800 text-white border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+              />
+              <div className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer">
+                {eyeTog ? (
+                  <AiOutlineEye size={20} onClick={() => setEyeTog(!eyeTog)} />
+                ) : (
+                  <AiOutlineEyeInvisible size={20} onClick={() => setEyeTog(!eyeTog)} />
+                )}
+              </div>
+            </div>
 
+            {/* Login Button */}
+            <button
+              type="submit"
+              disabled={loading || !email || !password}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md flex justify-center items-center transition-all"
+            >
+              {loading ? <TbLoader2 className="animate-spin" size={24} /> : 'Login'}
+            </button>
 
+            {/* Register Link */}
+            <p className="text-center text-sm">
+              Don't have an account?{' '}
+              <Link to="/register" className="text-yellow-400 hover:underline">
+                Register here
+              </Link>
+            </p>
           </form>
         </div>
-
-
       </div>
-
-
     </>
-
-
-  )
-}
+  );
+};

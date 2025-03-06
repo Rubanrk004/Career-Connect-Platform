@@ -1,90 +1,94 @@
-import React, { useState } from "react";
+import React from "react";
 import { MetaData } from "../components/MetaData";
-import { BsFacebook } from "react-icons/bs";
-import {
-  AiFillInstagram,
-  AiOutlineTwitter,
-  AiTwotoneMail,
-} from "react-icons/ai";
-import { BiMinus, BiPlus } from "react-icons/bi";
-import  Card  from "../components/Card"; // New Card component
-import Accordion from "../components/Accordion";// New Accordion component
+import { BsFacebook, BsLinkedin } from "react-icons/bs";
+import { AiFillInstagram, AiOutlineTwitter, AiOutlineMail, AiFillPhone } from "react-icons/ai";
+import Card from "../components/Card";
+import Accordion from "../components/Accordion";
 
 export const Contact = () => {
-  const [que1, setQue1] = useState(false);
-  const [que2, setQue2] = useState(false);
-  const [que3, setQue3] = useState(false);
-
   return (
     <>
       <MetaData title="Contact" />
-      <div className="bg-gray-950 min-h-screen pt-14 md:px-20 px-3 text-white">
-        <div className="flex flex-col gap-5 md:px-0 px-2 md:pt-8 pt-4 pb-20">
-          <div>
-            <p className="text-4xl pb-3 underline underline-offset-8 underPur font-bold text-center">
-              Contact Us
-            </p>
+      <div className="bg-gradient-to-r from-gray-900 to-gray-800 min-h-screen pt-14 md:px-20 px-4 text-white flex flex-col items-center">
+        
+        {/* Page Title */}
+        <div className="text-5xl mt-12 font-extrabold text-center pb-10 tracking-wide uppercase">
+          Let's <span className="text-indigo-400">Connect</span>
+        </div>
 
-            <p>
-              We're excited to hear from you! If you have any questions,
-              inquiries, or feedback, feel free to reach out to us using the
-              contact information provided below. Your satisfaction and
-              engagement with our platform are our top priorities, and we're
-              here to assist you in any way we can.
+        {/* Contact Info Section */}
+        <div className="grid md:grid-cols-2 gap-12 w-full max-w-6xl pb-16">
+          
+          {/* Contact Introduction */}
+          <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-2xl shadow-lg transition duration-300 hover:scale-105 hover:shadow-2xl">
+            <p className="text-4xl font-semibold text-white pb-4 text-center">
+              Reach Out to Us
+            </p>
+            <p className="text-lg text-gray-300 leading-relaxed">
+              Have questions, feedback, or need assistance? Our team is here to help! 
+              Get in touch with us using the details below, and we’ll make sure to respond as soon as possible.
             </p>
           </div>
 
-          <div>
-            <p class="text-2xl text-yellow-500">Contact Information</p>
-
+          {/* Contact Details */}
+          <div className="flex flex-col space-y-5">
             <Card
-              title="Address"
-              content="JobLane, Wall Street, New York, 123, United States"
+              title="📍 Office Location"
+              content="Career Connect, Silicon Valley, California, USA"
+              className="hover:shadow-lg transition-transform duration-300 transform hover:scale-105"
             />
             <Card
-              title="Email"
+              title="📧 Email Support"
               content={[
-                "General Inquiries: info@joblane.com",
-                "Support: support@joblane.com",
-                "Job Applications: jobs@joblane.com",
+                "General Inquiries: hello@careerconnect.com",
+                "Customer Support: support@careerconnect.com",
+                "Partnerships: partnerships@careerconnect.com",
               ]}
+              className="hover:shadow-lg transition-transform duration-300 transform hover:scale-105"
             />
             <Card
-              title="Phone"
+              title="📞 Contact Numbers"
               content={[
-                "Customer Support: +123-456-7890",
-                "HR & Job Inquiries: +123-456-7891",
+                "Support: +1-800-123-4567",
+                "Business: +1-800-987-6543",
               ]}
+              className="hover:shadow-lg transition-transform duration-300 transform hover:scale-105"
             />
+          </div>
+        </div>
 
-          <p className="text-xl pt-3 pb-1">Social Media:</p>
-<ul>
-  <div className="flex gap-5 pt-1 items-center">
-    <BsFacebook className="hover:text-blue-600" size={26} />
-    <AiFillInstagram className="hover:text-pink-500" size={30} />
-    <AiOutlineTwitter className="hover:text-blue-400" size={30} />
-    <AiTwotoneMail className="hover:text-red-600" size={28} />
-  </div>
-</ul>
-</div>
-        
+        {/* Social Media Section */}
+        <div className="text-center pb-12">
+          <p className="text-3xl font-semibold text-indigo-400 pb-4">Follow Us Online</p>
+          <div className="flex justify-center gap-8">
+            <BsFacebook className="hover:text-blue-600 transition duration-300 cursor-pointer text-3xl" />
+            <AiFillInstagram className="hover:text-pink-500 transition duration-300 cursor-pointer text-4xl" />
+            <AiOutlineTwitter className="hover:text-blue-400 transition duration-300 cursor-pointer text-4xl" />
+            <BsLinkedin className="hover:text-blue-700 transition duration-300 cursor-pointer text-4xl" />
+            <AiOutlineMail className="hover:text-red-600 transition duration-300 cursor-pointer text-3xl" />
+          </div>
+        </div>
 
-          <div>
-            <p className="text-2xl pb-4 text-yellow-500">
-              Frequently Asked Questions (FAQs):
-            </p>
-
+        {/* FAQ Section */}
+        <div className="w-full mb-7 max-w-4xl">
+          <p className="text-4xl font-semibold text-indigo-400 text-center pb-6">
+            Frequently Asked Questions
+          </p>
+          <div className="space-y-6">
             <Accordion
-              question="How do I create an account on your job application platform?"
-              answer="To create an account, click on the 'Register' button located at the top right corner of the homepage. Fill in your personal information, including your name, email address, and a secure password. Once your account is created, you can start exploring jobs."
+              question="🔹 How can I join Career Connect?"
+              answer="Signing up is easy! Click on ‘Sign Up’, fill in your details, and start exploring career opportunities right away."
+              className="hover:bg-gray-800 transition duration-300 p-4 rounded-lg"
             />
             <Accordion
-              question="What should I include in my job application?"
-              answer="Crafting an effective job application is crucial to stand out to potential employers. Make sure to include a tailored resume that highlights your relevant experience and skills. Additionally, write a resume that showcases how your qualifications align with the job requirements."
+              question="📂 What services do you offer?"
+              answer="We provide career guidance, mentorship programs, job listings, and networking opportunities for professionals."
+              className="hover:bg-gray-800 transition duration-300 p-4 rounded-lg"
             />
             <Accordion
-              question="How can I check the status of my job application?"
-              answer="After submitting your applications, you can log in to your account dashboard. Here, you'll find a section that lists your submitted applications along with their current statuses.The statuses may include accepted, rejected or pending."
+              question="💡 How can I become a mentor?"
+              answer="If you're an experienced professional willing to guide others, apply through our Mentorship Program page."
+              className="hover:bg-gray-800 transition duration-300 p-4 rounded-lg"
             />
           </div>
         </div>

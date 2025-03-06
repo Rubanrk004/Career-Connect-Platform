@@ -1,38 +1,38 @@
 const testimonials = [
     {
-        name: "John Doe",
-        position: "Software Engineer",
-        company: "TechCorp",
-        image: "https://dpemoji.com/wp-content/uploads/2023/01/Whatsapp-dp-for-boys-57.png",
-        text: "JobLane helped me find my dream job quickly and easily. The platform is user-friendly and has a great selection of job listings."
+        name: "Sarah Johnson",
+        position: "Full Stack Developer",
+        company: "CodeWave",
+        image: "https://i.pravatar.cc/150?img=10",
+        text: "Career Connect made my job search seamless! The personalized job recommendations helped me land a role that perfectly matches my skills and passion."
     },
     {
-        name: "Jane Smith",
-        position: "Product Manager",
-        company: "InnovateX",
-        image: "https://t3.ftcdn.net/jpg/06/36/69/86/360_F_636698674_DroChEj5eWmZiaZOSDMnj8hcDqqw74Fp.jpg",
-        text: "I love how JobLane connects job seekers with top companies. It made my job search stress-free and successful!"
+        name: "David Smith",
+        position: "Marketing Manager",
+        company: "BrandHive",
+        image: "https://i.pravatar.cc/150?img=12",
+        text: "I was struggling to find the right job until I found Career Connect. The platform’s advanced filtering and career insights guided me to the perfect opportunity!"
     },
     {
-        name: "Michael Johnson",
-        position: "Data Analyst",
-        company: "TechNet",
-        image: "https://dpemoji.com/wp-content/uploads/2023/01/Whatsapp-dp-for-boys-57.png",
-        text: "JobLane provided me with valuable insights into job trends and opportunities in my field. Highly recommend!"
+        name: "Jessica Lee",
+        position: "UI/UX Designer",
+        company: "CreativeSphere",
+        image: "https://i.pravatar.cc/150?img=20",
+        text: "Career Connect is a game-changer! The mentorship and skill-based communities helped me grow my career and connect with top industry professionals."
     },
     {
-        name: "Emily Brown",
-        position: "UX Designer",
-        company: "CreativeMind",
-        image: "https://t3.ftcdn.net/jpg/06/36/69/86/360_F_636698674_DroChEj5eWmZiaZOSDMnj8hcDqqw74Fp.jpg",
-        text: "JobLane's intuitive interface and personalized job recommendations made my job search efficient and enjoyable."
+        name: "Daniel Martinez",
+        position: "Cybersecurity Analyst",
+        company: "SecureNet",
+        image: "https://i.pravatar.cc/150?img=14",
+        text: "Thanks to Career Connect, I discovered exclusive job listings that I wouldn’t have found elsewhere. Their AI-powered insights gave me an edge in interviews!"
     },
     {
-        name: "Alex Williams",
-        position: "Marketing Specialist",
-        company: "DigitalEdge",
-        image: "https://dpemoji.com/wp-content/uploads/2023/01/Whatsapp-dp-for-boys-57.png",
-        text: "JobLane connected me with top-tier companies and helped me land my dream job. Thank you for the amazing platform!"
+        name: "Emily Carter",
+        position: "HR Specialist",
+        company: "PeopleFirst",
+        image: "https://i.pravatar.cc/150?img=30",
+        text: "Career Connect is more than just a job board. It’s a community where professionals can learn, grow, and find opportunities that truly align with their career goals."
     },
 ];
 
